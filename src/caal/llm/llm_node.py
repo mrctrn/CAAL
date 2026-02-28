@@ -116,10 +116,7 @@ async def llm_node(
 
         # Discover tools from agent and MCP servers
         tools = await _discover_tools(agent, provider)
-        if tools:
-            tool_names = [t.get("function", {}).get("name", "?") for t in tools]
-            logger.info(f"Tools ({len(tools)}): {tool_names}")
-        else:
+        if not tools:
             logger.warning("No tools discovered")
 
         # If tools available, loop non-streaming calls to support chaining

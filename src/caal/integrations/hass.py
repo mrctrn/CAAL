@@ -347,8 +347,12 @@ def create_hass_tools(
         if action == "set_volume" and value is not None:
             args["volume_level"] = value
         elif action == "set_brightness" and value is not None:
-            # Scale 0-100 percentage to HASS 0-255 range
-            args["brightness"] = round(value * 255 / 100)
+            # HassLightSet intent expects 0-100 percentage.
+            # LLM sometimes sends 0-255 (from GetLiveContext state data),
+            # so auto-scale values >100 down to percentage.
+            if value > 100:
+                value = round(value * 100 / 255)
+            args["brightness"] = value
         elif action == "set_temperature" and value is not None:
             args["temperature"] = value
 
