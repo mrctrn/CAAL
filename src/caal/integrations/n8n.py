@@ -2,7 +2,8 @@
 
 Convention:
 - All workflows use webhook triggers
-- Webhook URL = http://HOST:PORT/webhook/{workflow_name}
+- Webhook URL = http://HOST:PORT/webhook/{webhook_path}
+- Webhook path is read from the webhook node's path parameter
 - Workflow descriptions in webhook node notes document expected parameters
 """
 
@@ -24,17 +25,17 @@ _cache_ttl_seconds: float = 3600  # 1 hour TTL
 async def discover_n8n_workflows(n8n_mcp, base_url: str) -> tuple[list[dict], dict[str, str]]:
     """Discover n8n workflows and create tool definitions.
 
-    Convention: All workflows use webhook triggers with webhook path = workflow name.
-    Workflow descriptions extracted from webhook node notes.
+    Reads the webhook path from each workflow's webhook node to build the
+    correct URL. Falls back to the workflow name if no webhook node is found.
 
     Args:
         n8n_mcp: Initialized n8n MCP server client
         base_url: n8n base URL (e.g. http://192.168.1.100:5678)
 
     Returns:
-        Tuple of (ollama_tools, workflow_name_map)
+        Tuple of (ollama_tools, webhook_path_map)
         - ollama_tools: List of tool dicts in Ollama format
-        - workflow_name_map: Dict mapping tool_name -> workflow_name
+        - webhook_path_map: Dict mapping tool_name -> webhook_path
     """
     tools = []
     workflow_name_map = {}
@@ -66,9 +67,10 @@ async def discover_n8n_workflows(n8n_mcp, base_url: str) -> tuple[list[dict], di
             wf_id = workflow["id"]  # Need ID for get_workflow_details
             tool_name = sanitize_tool_name(wf_name)
 
-            # Try to get detailed description from webhook notes
+            # Try to get detailed description and webhook path from workflow details
             description = ""
             schema = None
+            webhook_path = None
             try:
                 # Check cache first
                 if wf_id not in _workflow_details_cache:
@@ -82,6 +84,7 @@ async def discover_n8n_workflows(n8n_mcp, base_url: str) -> tuple[list[dict], di
                 description, schema = extract_webhook_description(
                     workflow_details
                 )
+                webhook_path = _get_webhook_path(workflow_details)
 
             except Exception as e:
                 logger.warning(f"Failed to get details for {wf_name}: {e}")
@@ -112,28 +115,27 @@ async def discover_n8n_workflows(n8n_mcp, base_url: str) -> tuple[list[dict], di
                 },
             }
             tools.append(tool)
-            workflow_name_map[tool_name] = wf_name  # Map sanitized -> original name
-            logger.info(f"  ✓ {tool_name}")
+            # Use actual webhook path if available, fall back to workflow name
+            workflow_name_map[tool_name] = webhook_path or wf_name
+            logger.info(f"  ✓ {tool_name} -> /webhook/{webhook_path or wf_name}")
 
     except Exception as e:
         logger.warning(f"Failed to discover n8n workflows: {e}", exc_info=True)
     return tools, workflow_name_map
 
 
-async def execute_n8n_workflow(base_url: str, workflow_name: str, arguments: dict) -> Any:
+async def execute_n8n_workflow(base_url: str, webhook_path: str, arguments: dict) -> Any:
     """Execute an n8n workflow via POST request.
-
-    Convention: webhook URL = {base_url}/webhook/{workflow_name}
 
     Args:
         base_url: n8n base URL (e.g. http://192.168.1.100:5678)
-        workflow_name: The workflow name (used in webhook path)
+        webhook_path: The webhook path from the workflow's webhook node
         arguments: Arguments to pass to the workflow as JSON body
 
     Returns:
         Workflow execution result (only final node output)
     """
-    webhook_url = f"{base_url.rstrip('/')}/webhook/{workflow_name}"
+    webhook_url = f"{base_url.rstrip('/')}/webhook/{webhook_path}"
 
     async with aiohttp.ClientSession() as session:
         try:
@@ -141,7 +143,7 @@ async def execute_n8n_workflow(base_url: str, workflow_name: str, arguments: dic
                 response.raise_for_status()
                 return await response.json()
         except aiohttp.ClientError as e:
-            logger.error(f"Failed to execute n8n workflow {workflow_name}: {e}")
+            logger.error(f"Failed to execute n8n workflow {webhook_path}: {e}")
             raise
 
 
@@ -202,6 +204,16 @@ def _get_webhook_notes(workflow_details: dict) -> str:
             if node_desc:
                 return node_desc
     return ""
+
+
+def _get_webhook_path(workflow_details: dict) -> str | None:
+    """Find webhook trigger node and return its path parameter."""
+    for node in workflow_details.get("workflow", {}).get("nodes", []):
+        if node.get("type") == "n8n-nodes-base.webhook":
+            path = node.get("parameters", {}).get("path", "").strip()
+            if path:
+                return path
+    return None
 
 
 def build_parameters_from_schema(schema: dict) -> dict:
