@@ -91,6 +91,10 @@ def format_date_speech_friendly(dt: datetime, language: str = "en") -> str:
         return _format_date_italian(dt)
     if language == "pt":
         return _format_date_portuguese(dt)
+    if language == "da":
+        return _format_date_danish(dt)
+    if language == "ro":
+        return _format_date_romanian(dt)
 
     # English (default)
     day_name = dt.strftime('%A')
@@ -142,6 +146,10 @@ def format_time_speech_friendly(dt: datetime, language: str = "en") -> str:
         return _format_time_italian(dt)
     if language == "pt":
         return _format_time_portuguese(dt)
+    if language == "da":
+        return _format_time_danish(dt)
+    if language == "ro":
+        return _format_time_romanian(dt)
 
     # English (default)
     hour = dt.hour
@@ -278,3 +286,86 @@ def _format_time_portuguese(dt: datetime) -> str:
         return f"{hour} horas"
     else:
         return f"{hour} e {minute}"
+
+
+def _format_date_danish(dt: datetime) -> str:
+    """Format a date in Danish speech-friendly style.
+
+    Danish dates use cardinal numbers with "den" prefix.
+    Format: "onsdag den 21. januar 2026"
+    """
+    da_days = [
+        "mandag", "tirsdag", "onsdag", "torsdag",
+        "fredag", "lørdag", "søndag",
+    ]
+    da_months = [
+        "januar", "februar", "marts", "april", "maj", "juni",
+        "juli", "august", "september", "oktober", "november", "december",
+    ]
+
+    day_name = da_days[dt.weekday()]
+    month_name = da_months[dt.month - 1]
+
+    return f"{day_name} den {dt.day}. {month_name} {dt.year}"
+
+
+def _format_time_danish(dt: datetime) -> str:
+    """Format a time in Danish speech-friendly style.
+
+    Uses 24-hour clock.
+    Examples: "klokken 15 og 30", "klokken 15", "midnat", "middag"
+    """
+    hour = dt.hour
+    minute = dt.minute
+
+    if hour == 0 and minute == 0:
+        return "midnat"
+    if hour == 12 and minute == 0:
+        return "middag"
+
+    if minute == 0:
+        return f"klokken {hour}"
+    else:
+        return f"klokken {hour} og {minute}"
+
+
+def _format_date_romanian(dt: datetime) -> str:
+    """Format a date in Romanian speech-friendly style.
+
+    Romanian dates use cardinal numbers with "întâi" for the 1st.
+    Format: "miercuri, 21 ianuarie 2026"
+    """
+    ro_days = [
+        "luni", "marți", "miercuri", "joi",
+        "vineri", "sâmbătă", "duminică",
+    ]
+    ro_months = [
+        "ianuarie", "februarie", "martie", "aprilie", "mai", "iunie",
+        "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie",
+    ]
+
+    day_name = ro_days[dt.weekday()]
+    month_name = ro_months[dt.month - 1]
+    day_number = "întâi" if dt.day == 1 else str(dt.day)
+
+    return f"{day_name}, {day_number} {month_name} {dt.year}"
+
+
+def _format_time_romanian(dt: datetime) -> str:
+    """Format a time in Romanian speech-friendly style.
+
+    Uses 24-hour clock with "și" for minutes.
+    Examples: "15 și 30", "15", "miezul nopții", "amiază"
+    """
+    hour = dt.hour
+    minute = dt.minute
+
+    if hour == 0 and minute == 0:
+        return "miezul nopții"
+    if hour == 12 and minute == 0:
+        return "amiază"
+
+    if minute == 0:
+        return f"ora {hour}"
+    else:
+        return f"{hour} și {minute}"

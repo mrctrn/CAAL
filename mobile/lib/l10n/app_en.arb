@@ -238,6 +238,12 @@
   "languagePortuguese": "Português",
   "@languagePortuguese": { "description": "Portuguese option" },
 
+  "languageDanish": "Dansk",
+  "@languageDanish": { "description": "Danish option" },
+
+  "languageRomanian": "Română",
+  "@languageRomanian": { "description": "Romanian option" },
+
   "changesNote": "Note: Model, context size, and wake word changes take effect on next session.",
   "@changesNote": { "description": "Settings note" },
 

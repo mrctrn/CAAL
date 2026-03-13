@@ -80,6 +80,8 @@
   "languageFrench": "Français",
   "languageItalian": "Italiano",
   "languagePortuguese": "Português",
+  "languageDanish": "Dansk",
+  "languageRomanian": "Română",
   "changesNote": "Nota: Alterações no modelo, tamanho do contexto e palavra de ativação terão efeito na próxima sessão.",
   "failedToLoad": "Falha ao carregar configurações: {error}",
   "failedToSave": "Falha ao salvar: {error}",

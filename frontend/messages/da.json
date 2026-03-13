@@ -1,0 +1,333 @@
+{
+  "Common": {
+    "save": "Gem ændringer",
+    "saving": "Gemmer...",
+    "loading": "Indlæser...",
+    "test": "Test",
+    "back": "Tilbage",
+    "continue": "Fortsæt",
+    "cancel": "Annuller",
+    "close": "Luk",
+    "delete": "Slet",
+    "retry": "Prøv igen",
+    "enabled": "Aktiveret",
+    "disabled": "Deaktiveret",
+    "settings": "Indstillinger",
+    "tools": "Værktøjer",
+    "memory": "Hukommelse",
+    "connected": "Tilsluttet"
+  },
+  "Welcome": {
+    "subtitle": "Tal live med din stemme-AI-assistent",
+    "start": "Tal med CAAL"
+  },
+  "Settings": {
+    "title": "Indstillinger",
+    "tabs": {
+      "agent": "Agent",
+      "prompt": "Prompt",
+      "pipeline": "Stemmepipeline",
+      "aiProvider": "AI-udbyder",
+      "integrations": "Integrationer",
+      "wake": "Aktiveringsord"
+    },
+    "pipeline": {
+      "sttTitle": "Talegenkendelse (STT)",
+      "llmTitle": "Sprogmodel (LLM)",
+      "ttsTitle": "Tekst-til-tale (TTS)",
+      "sttSpeachesDesc": "Lokal via Whisper. Privat, på din egen hardware.",
+      "sttGroqDesc": "Sky via Groq Whisper. Hurtig og præcis.",
+      "sttGroqKeyNote": "Kræver en Groq API-nøgle (deles med LLM hvis Groq bruges).",
+      "sttGroqKeyShared": "API-nøgle deles med Groq LLM-sektionen."
+    },
+    "language": {
+      "label": "Sprog",
+      "description": "Vælg dit foretrukne sprog",
+      "updated": "Sprog opdateret"
+    },
+    "theme": {
+      "changeTheme": "Skift tema",
+      "midnight": "Midnat",
+      "greySlate": "Grå skifer",
+      "light": "Lys"
+    },
+    "agent": {
+      "name": "Agentnavn",
+      "voice": "Stemme",
+      "wakeGreetings": "Aktiveringshilsner",
+      "wakeGreetingsHint": "én pr. linje"
+    },
+    "prompt": {
+      "default": "Standard",
+      "custom": "Brugerdefineret"
+    },
+    "providers": {
+      "llmProvider": "LLM-udbyder",
+      "ttsProvider": "TTS-udbyder",
+      "hostUrl": "Host URL",
+      "apiKey": "API-nøgle",
+      "model": "Model",
+      "selectModel": "Vælg en model...",
+      "modelsAvailable": "{count} modeller tilgængelige",
+      "testConnectionToSee": "Test forbindelsen for at se alle tilgængelige modeller",
+      "enterApiKeyToSee": "Indtast API-nøgle og test for at se alle tilgængelige modeller",
+      "getApiKeyAt": "Hent din API-nøgle på",
+      "sttProvider": "STT-udbyder",
+      "sttProviderNote": "Vælges automatisk baseret på LLM-udbyder.",
+      "speachesLocal": "Speaches (lokal)",
+      "groqWhisper": "Groq Whisper",
+      "kokoroDesc": "Neurale TTS i høj kvalitet (kræver Kokoro-container)",
+      "piperDesc": "Let CPU-venlig TTS med 35+ sprog",
+      "aiProvider": "AI-udbyder",
+      "ollamaDesc": "Lokal, privat, gratis",
+      "groqDesc": "Hurtig sky-inferens",
+      "ollamaHost": "Ollama Host",
+      "groqApiKey": "Groq API-nøgle",
+      "ollamaSttNote": "Brug af Ollama aktiverer også lokal tale-til-tekst via Speaches.",
+      "groqSttNote": "Brug af Groq aktiverer også hurtig sky-tale-til-tekst via Whisper.",
+      "openaiCompatibleDesc": "Selvhostet eller OpenAI-kompatibel API",
+      "openrouterDesc": "Adgang til 200+ modeller via samlet API",
+      "baseUrl": "Basis URL",
+      "optional": "valgfri",
+      "openaiApiKeyNote": "Lad stå tom hvis din server ikke kræver autentificering",
+      "openaiCompatibleSttNote": "Brug af OpenAI-kompatibel aktiverer lokal tale-til-tekst via Speaches.",
+      "openrouterSttNote": "Brug af OpenRouter aktiverer hurtig sky-tale-til-tekst via Groq Whisper.",
+      "searchModels": "Søg modeller...",
+      "noModelsFound": "Ingen modeller fundet",
+      "restartRequired": "Genstart påkrævet",
+      "restartDescription": "LLM-udbyderen er ændret. Genstart venligst agenten for at ændringerne træder i kraft.",
+      "restartLater": "Jeg genstarter senere"
+    },
+    "llm": {
+      "temperature": "Temperatur",
+      "precise": "Præcis",
+      "creative": "Kreativ",
+      "contextSize": "Kontekststørrelse",
+      "maxTurns": "Maks. ture",
+      "toolCacheSize": "Værktøjscache-størrelse",
+      "turnDetection": "Turdetektion",
+      "turnDetectionDesc": "Styr hvordan agenten registrerer hvornår du er færdig med at tale",
+      "allowInterruptions": "Tillad afbrydelser",
+      "allowInterruptionsDesc": "Afbryd agenten mens den taler",
+      "endpointingDelay": "Slutpunktsforsinkelse",
+      "endpointingDelayDesc": "Hvor længe der skal ventes efter du stopper med at tale før der svares"
+    },
+    "integrations": {
+      "homeAssistant": "Home Assistant",
+      "homeAssistantDesc": "Styr dine smarte hjemmeenheder",
+      "n8n": "n8n",
+      "n8nWorkflows": "n8n Workflows",
+      "n8nDesc": "Workflow-automatisering og værktøjsintegrationer",
+      "longLivedToken": "Langtidsgyldig adgangstoken",
+      "accessToken": "Adgangstoken",
+      "connected": "Tilsluttet",
+      "entities": "{count} enheder",
+      "mcpNote": "/mcp-server/http tilføjes automatisk",
+      "mcpToken": "MCP-token",
+      "mcpTokenPlaceholder": "MCP-adgangstoken",
+      "mcpTokenHint": "Findes i n8n Indstillinger → MCP-servere",
+      "n8nApiKeyPlaceholder": "n8n API-nøgle (valgfri)",
+      "n8nApiKeyHint": "Påkrævet for at installere værktøjer fra registret. Opret en i n8n Indstillinger → API.",
+      "optionalNote": "Konfigurer valgfrie integrationer. Du kan tilføje eller ændre disse senere i Indstillinger."
+    },
+    "wake": {
+      "title": "Aktiveringsord",
+      "description": "Aktiver agenten med en talt udløserfrase",
+      "enable": "Aktiver aktiveringsord",
+      "model": "Aktiveringsord-model",
+      "threshold": "Tærskel",
+      "silenceTimeout": "Stilhedstimeout (s)"
+    },
+    "errors": {
+      "loadFailed": "Kunne ikke indlæse indstillinger",
+      "saveFailed": "Kunne ikke gemme",
+      "savePromptFailed": "Kunne ikke gemme prompt",
+      "connectionFailed": "Forbindelse mislykkedes",
+      "failedToValidate": "Validering mislykkedes",
+      "invalidApiKey": "Ugyldig API-nøgle"
+    },
+    "status": {
+      "loading": "Indlæser indstillinger...",
+      "downloadingVoice": "Downloader stemmemodel..."
+    },
+    "tts": {
+      "engine": "Tekst-til-tale-motor",
+      "kokoroDesc": "GPU-accelereret, neuralt TTS i høj kvalitet",
+      "piperDesc": "CPU-venlig, let med 35+ sprog",
+      "kokoroNote": "Kokoro kræver en GPU for optimal ydeevne.",
+      "piperNote": "Piper kører på CPU og understøtter mange sprog."
+    }
+  },
+  "Tools": {
+    "panel": {
+      "title": "Værktøjer",
+      "subtitle": "Udvid hvad CAAL kan gøre",
+      "browseTab": "Gennemse register",
+      "installedTab": "Installerede værktøjer",
+      "searchPlaceholder": "Søg værktøjer...",
+      "installedSearchPlaceholder": "Søg installerede værktøjer..."
+    },
+    "sort": {
+      "alphabetical": "A → Z",
+      "alphabeticalDesc": "Z → A",
+      "newest": "Nyeste først",
+      "oldest": "Ældste først"
+    },
+    "warnings": {
+      "n8nNotConfigured": "n8n ikke konfigureret",
+      "n8nEnablePrompt": "Aktiver n8n i Indstillinger → Integrationer for at installere værktøjer."
+    },
+    "browse": {
+      "loading": "Indlæser værktøjer...",
+      "emptyState": "Ingen værktøjer fundet",
+      "clearSearch": "Ryd søgning"
+    },
+    "card": {
+      "voiceTriggerLabel": "Prøv at sige",
+      "installedBadge": "Installeret",
+      "installButton": "Installer værktøj",
+      "customBadge": "Brugerdefineret",
+      "activeLabel": "Aktiv",
+      "inactiveLabel": "Inaktiv",
+      "shareButton": "Del til register",
+      "shareButtonShort": "Del",
+      "updateButton": "Opdater"
+    },
+    "detail": {
+      "loading": "Indlæser detaljer...",
+      "toolSuiteTitle": "Værktøjssuite",
+      "toolSuiteDescription": "Dette er et multi-handlingsværktøj der kan udføre flere relaterede opgaver.",
+      "voiceTriggersTitle": "Prøv at sige",
+      "voiceTriggerFormat": "Hej Cal, {trigger}",
+      "requiredServicesTitle": "Påkrævede tjenester",
+      "requiredVariablesTitle": "Konfiguration påkrævet",
+      "exampleLabel": "Eksempel:",
+      "requiredCredentialsTitle": "n8n-legitimationsoplysninger påkrævet",
+      "tagsTitle": "Tags",
+      "authorTitle": "Forfatter",
+      "workflowTitle": "Workflow",
+      "openWorkflowButton": "Åbn i n8n",
+      "n8nDisabledMessage": "Aktiver n8n i Indstillinger for at installere værktøjer",
+      "updateButton": "Opdater til v{version}",
+      "installButton": "Installer værktøj"
+    },
+    "install": {
+      "loading": "Indlæser værktøjsdetaljer...",
+      "variablesIntro": "Indtast konfigurationsværdierne for dette værktøj:",
+      "credentialsIntro": "Dette værktøj kræver n8n-legitimationsoplysninger. Indtast det præcise navn på hver legitimation som det fremgår i din n8n-instans.",
+      "credentialTypeLabel": "Type:",
+      "credentialPlaceholder": "Indtast n8n-legitimationsnavn",
+      "submitButton": "Installer",
+      "installing": "Installerer værktøj i n8n...",
+      "successTitle": "Værktøj installeret!",
+      "successMessage": "{tool} er nu tilgængelig.",
+      "successVoiceTriggersLabel": "Prøv at sige:",
+      "errorTitle": "Installation mislykkedes",
+      "modalTitle": "Installer {tool}"
+    },
+    "installed": {
+      "n8nDisabled": "n8n er ikke aktiveret. Konfigurer n8n i Indstillinger for at se installerede værktøjer.",
+      "loading": "Indlæser installerede værktøjer...",
+      "emptyState": "Ingen workflows installeret i n8n",
+      "noSearchResults": "Ingen værktøjer matcher \"{query}\""
+    },
+    "reload": {
+      "tooltip": "Genindlæs værktøjer"
+    },
+    "share": {
+      "title": "Del workflow til register",
+      "securityTitle": "Dine hemmeligheder forlader aldrig dit netværk",
+      "securityDescription": "Sanitering sker lokalt i din browser før indsendelse. Legitimations-ID'er nulstilles.",
+      "variablesDetected": "Variabler fundet (vil blive parametriseret):",
+      "credentialsDetected": "Legitimationsoplysninger fundet og parametriseres:",
+      "privateUrlsDetected": "Private netværks-URL'er (vil blive parametriseret):",
+      "submissionFailed": "Indsendelse mislykkedes",
+      "readyToSubmit": "Klar til indsendelse!",
+      "popupBlockedHint": "Fuldfør din indsendelse i formularen. Hvis popup blev blokeret, klik nedenfor:",
+      "openFormButton": "Åbn indsendelsesformular",
+      "preparingSubmission": "Forbereder indsendelse...",
+      "continueButton": "Fortsæt til indsendelsesformular"
+    },
+    "workflow": {
+      "customToolLabel": "Brugerdefineret værktøj",
+      "statusLabel": "Status",
+      "statusActive": "Aktiv",
+      "statusInactive": "Inaktiv",
+      "tagsLabel": "Tags",
+      "createdLabel": "Oprettet",
+      "lastUpdatedLabel": "Sidst opdateret",
+      "n8nWorkflowLabel": "n8n Workflow",
+      "unpublishedInfo": "Dette er et brugerdefineret værktøj der ikke er publiceret i CAAL-værktøjsregistret. Del det for at hjælpe andre med at opdage og bruge dette værktøj. Alle nøgler, ID'er og private URL'er fjernes automatisk.",
+      "shareButton": "Del til register"
+    },
+    "status": {
+      "initialTooltip": "Værktøjsstatus",
+      "toolUsedTooltip": "Værktøj: {names}",
+      "noToolTooltip": "Intet værktøj brugt",
+      "waitingAriaLabel": "Værktøjsstatus: venter på svar",
+      "toolDetailsAriaLabel": "Værktøj brugt: {names}. Klik for detaljer.",
+      "noToolAriaLabel": "Intet værktøj kaldt - svar genereret af modellen",
+      "parametersTitle": "Værktøjsparametre"
+    }
+  },
+  "Memory": {
+    "panel": {
+      "title": "Hukommelse",
+      "subtitle": "{count} poster gemt",
+      "emptyState": "Ingen hukommelse gemt",
+      "emptyHint": "Hukommelse oprettes når værktøjer returnerer data eller når du beder mig huske noget",
+      "clearAll": "Ryd alt",
+      "addEntry": "Tilføj post"
+    },
+    "confirmClearAll": "Ryd alle hukommelsesposter?",
+    "create": {
+      "title": "Tilføj hukommelsespost",
+      "key": "Nøgle",
+      "keyPlaceholder": "f.eks. bruger_præference",
+      "valuePlaceholder": "f.eks. kan lide jazz",
+      "save": "Tilføj post"
+    },
+    "detail": {
+      "value": "Værdi",
+      "storedAt": "Gemt",
+      "expiresAt": "Udløber",
+      "noExpiry": "Ingen udløb",
+      "source": "Kilde",
+      "sources": {
+        "tool_hint": "Automatisk gemt fra værktøj",
+        "explicit": "Gemt efter anmodning",
+        "api": "Gemt via API",
+        "ui": "Tilføjet fra UI"
+      }
+    }
+  },
+  "Setup": {
+    "welcome": "Velkommen til CAAL",
+    "stepOf": "Trin {current} af {total}",
+    "step1Title": "Hvordan vil jeg høre dig?",
+    "step2Title": "Vælg din AI-udbyder",
+    "step3Title": "Vælg din stemme",
+    "step4Title": "Konfigurer integrationer",
+    "finishSetup": "Afslut opsætning"
+  },
+  "ControlBar": {
+    "ariaLabel": "Stemmeassistent-kontrolelementer",
+    "toggleMicrophone": "Slå mikrofon til/fra",
+    "toggleCamera": "Slå kamera til/fra",
+    "screenShare": "Skærmdeling",
+    "toggleScreenShare": "Slå skærmdeling til/fra",
+    "transcript": "Transskription",
+    "toggleTranscript": "Vis/skjul transskription",
+    "endSession": "Afslut session",
+    "endCall": "AFSLUT OPKALD",
+    "endCallShort": "AFSLUT",
+    "wakeWordDisabled": "Aktiveringsord-detektion deaktiveret",
+    "wakeWordWaiting": "Venter på aktiveringsord — sig \"{wakeWord}\"",
+    "wakeWordListening": "Lytter — tal nu",
+    "selectMicrophone": "Vælg mikrofon",
+    "selectCamera": "Vælg kamera",
+    "typePlaceholder": "Skriv noget...",
+    "sending": "Sender...",
+    "send": "Send"
+  }
+}

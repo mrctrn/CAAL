@@ -80,6 +80,8 @@
   "languageFrench": "Français",
   "languageItalian": "Italiano",
   "languagePortuguese": "Português",
+  "languageDanish": "Dansk",
+  "languageRomanian": "Română",
   "changesNote": "Note : Les changements de modèle, taille du contexte et mot d'activation prennent effet à la prochaine session.",
   "failedToLoad": "Échec du chargement des paramètres : {error}",
   "failedToSave": "Échec de l'enregistrement : {error}",

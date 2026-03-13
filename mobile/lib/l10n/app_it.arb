@@ -80,6 +80,8 @@
   "languageFrench": "Français",
   "languageItalian": "Italiano",
   "languagePortuguese": "Português",
+  "languageDanish": "Dansk",
+  "languageRomanian": "Română",
   "changesNote": "Nota: Le modifiche al modello, dimensione del contesto e parola di attivazione avranno effetto alla prossima sessione.",
   "failedToLoad": "Caricamento delle impostazioni fallito: {error}",
   "failedToSave": "Salvataggio fallito: {error}",

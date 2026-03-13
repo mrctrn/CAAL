@@ -1,0 +1,333 @@
+{
+  "Common": {
+    "save": "Salvează modificările",
+    "saving": "Se salvează...",
+    "loading": "Se încarcă...",
+    "test": "Testează",
+    "back": "Înapoi",
+    "continue": "Continuă",
+    "cancel": "Anulează",
+    "close": "Închide",
+    "delete": "Șterge",
+    "retry": "Reîncearcă",
+    "enabled": "Activat",
+    "disabled": "Dezactivat",
+    "settings": "Setări",
+    "tools": "Instrumente",
+    "memory": "Memorie",
+    "connected": "Conectat"
+  },
+  "Welcome": {
+    "subtitle": "Vorbește live cu asistentul tău vocal AI",
+    "start": "Vorbește cu CAAL"
+  },
+  "Settings": {
+    "title": "Setări",
+    "tabs": {
+      "agent": "Agent",
+      "prompt": "Prompt",
+      "pipeline": "Pipeline vocal",
+      "aiProvider": "Furnizor AI",
+      "integrations": "Integrări",
+      "wake": "Cuvânt de activare"
+    },
+    "pipeline": {
+      "sttTitle": "Recunoaștere vocală (STT)",
+      "llmTitle": "Model de limbaj (LLM)",
+      "ttsTitle": "Text-în-vorbire (TTS)",
+      "sttSpeachesDesc": "Local prin Whisper. Privat, pe hardware-ul tău.",
+      "sttGroqDesc": "Cloud prin Groq Whisper. Rapid și precis.",
+      "sttGroqKeyNote": "Necesită o cheie API Groq (partajată cu LLM dacă folosești Groq).",
+      "sttGroqKeyShared": "Cheie API partajată cu secțiunea LLM Groq."
+    },
+    "language": {
+      "label": "Limbă",
+      "description": "Alege limba preferată",
+      "updated": "Limba a fost actualizată"
+    },
+    "theme": {
+      "changeTheme": "Schimbă tema",
+      "midnight": "Miezul nopții",
+      "greySlate": "Ardezie gri",
+      "light": "Deschis"
+    },
+    "agent": {
+      "name": "Numele agentului",
+      "voice": "Voce",
+      "wakeGreetings": "Salutări de activare",
+      "wakeGreetingsHint": "unul pe linie"
+    },
+    "prompt": {
+      "default": "Implicit",
+      "custom": "Personalizat"
+    },
+    "providers": {
+      "llmProvider": "Furnizor LLM",
+      "ttsProvider": "Furnizor TTS",
+      "hostUrl": "URL gazdă",
+      "apiKey": "Cheie API",
+      "model": "Model",
+      "selectModel": "Selectează un model...",
+      "modelsAvailable": "{count} modele disponibile",
+      "testConnectionToSee": "Testează conexiunea pentru a vedea toate modelele disponibile",
+      "enterApiKeyToSee": "Introdu cheia API și testează pentru a vedea toate modelele disponibile",
+      "getApiKeyAt": "Obține cheia API de la",
+      "sttProvider": "Furnizor STT",
+      "sttProviderNote": "Selectat automat pe baza furnizorului LLM.",
+      "speachesLocal": "Speaches (local)",
+      "groqWhisper": "Groq Whisper",
+      "kokoroDesc": "TTS neuronal de înaltă calitate (necesită container Kokoro)",
+      "piperDesc": "TTS ușor, prietenos cu CPU, cu peste 35 de limbi",
+      "aiProvider": "Furnizor AI",
+      "ollamaDesc": "Local, privat, gratuit",
+      "groqDesc": "Inferență cloud rapidă",
+      "ollamaHost": "Gazdă Ollama",
+      "groqApiKey": "Cheie API Groq",
+      "ollamaSttNote": "Folosirea Ollama activează și recunoașterea vocală locală prin Speaches.",
+      "groqSttNote": "Folosirea Groq activează și recunoașterea vocală cloud rapidă prin Whisper.",
+      "openaiCompatibleDesc": "API auto-găzduit sau compatibil OpenAI",
+      "openrouterDesc": "Acces la peste 200 modele prin API unificat",
+      "baseUrl": "URL de bază",
+      "optional": "opțional",
+      "openaiApiKeyNote": "Lasă gol dacă serverul tău nu necesită autentificare",
+      "openaiCompatibleSttNote": "Folosirea OpenAI-compatibil activează recunoașterea vocală locală prin Speaches.",
+      "openrouterSttNote": "Folosirea OpenRouter activează recunoașterea vocală cloud rapidă prin Groq Whisper.",
+      "searchModels": "Caută modele...",
+      "noModelsFound": "Niciun model găsit",
+      "restartRequired": "Repornire necesară",
+      "restartDescription": "Furnizorul LLM a fost schimbat. Repornește agentul pentru ca modificările să aibă efect.",
+      "restartLater": "Voi reporni mai târziu"
+    },
+    "llm": {
+      "temperature": "Temperatură",
+      "precise": "Precis",
+      "creative": "Creativ",
+      "contextSize": "Dimensiune context",
+      "maxTurns": "Ture maxime",
+      "toolCacheSize": "Dimensiune cache instrumente",
+      "turnDetection": "Detectare tură",
+      "turnDetectionDesc": "Controlează cum agentul detectează când ai terminat de vorbit",
+      "allowInterruptions": "Permite întreruperi",
+      "allowInterruptionsDesc": "Întrerupe agentul în timp ce vorbește",
+      "endpointingDelay": "Întârziere punct final",
+      "endpointingDelayDesc": "Cât timp să aștepte după ce te oprești din vorbit înainte de a răspunde"
+    },
+    "integrations": {
+      "homeAssistant": "Home Assistant",
+      "homeAssistantDesc": "Controlează dispozitivele tale inteligente de acasă",
+      "n8n": "n8n",
+      "n8nWorkflows": "Workflow-uri n8n",
+      "n8nDesc": "Automatizare workflow-uri și integrări instrumente",
+      "longLivedToken": "Token de acces cu durată lungă",
+      "accessToken": "Token de acces",
+      "connected": "Conectat",
+      "entities": "{count} entități",
+      "mcpNote": "/mcp-server/http va fi adăugat automat",
+      "mcpToken": "Token MCP",
+      "mcpTokenPlaceholder": "Token de acces MCP",
+      "mcpTokenHint": "Se găsește în Setări n8n → Servere MCP",
+      "n8nApiKeyPlaceholder": "Cheie API n8n (opțional)",
+      "n8nApiKeyHint": "Necesară pentru instalarea instrumentelor din registru. Creează una în Setări n8n → API.",
+      "optionalNote": "Configurează integrări opționale. Le poți adăuga sau modifica mai târziu în Setări."
+    },
+    "wake": {
+      "title": "Cuvânt de activare",
+      "description": "Activează agentul cu o frază rostită",
+      "enable": "Activează cuvântul de activare",
+      "model": "Model cuvânt de activare",
+      "threshold": "Prag",
+      "silenceTimeout": "Timeout liniște (s)"
+    },
+    "errors": {
+      "loadFailed": "Încărcarea setărilor a eșuat",
+      "saveFailed": "Salvarea a eșuat",
+      "savePromptFailed": "Salvarea promptului a eșuat",
+      "connectionFailed": "Conexiunea a eșuat",
+      "failedToValidate": "Validarea a eșuat",
+      "invalidApiKey": "Cheie API invalidă"
+    },
+    "status": {
+      "loading": "Se încarcă setările...",
+      "downloadingVoice": "Se descarcă modelul vocal..."
+    },
+    "tts": {
+      "engine": "Motor text-în-vorbire",
+      "kokoroDesc": "TTS neuronal accelerat GPU, de înaltă calitate",
+      "piperDesc": "Ușor, prietenos cu CPU, cu peste 35 de limbi",
+      "kokoroNote": "Kokoro necesită un GPU pentru performanță optimă.",
+      "piperNote": "Piper rulează pe CPU și suportă multe limbi."
+    }
+  },
+  "Tools": {
+    "panel": {
+      "title": "Instrumente",
+      "subtitle": "Extinde capacitățile CAAL",
+      "browseTab": "Explorează registrul",
+      "installedTab": "Instrumente instalate",
+      "searchPlaceholder": "Caută instrumente...",
+      "installedSearchPlaceholder": "Caută instrumente instalate..."
+    },
+    "sort": {
+      "alphabetical": "A → Z",
+      "alphabeticalDesc": "Z → A",
+      "newest": "Cele mai noi",
+      "oldest": "Cele mai vechi"
+    },
+    "warnings": {
+      "n8nNotConfigured": "n8n nu este configurat",
+      "n8nEnablePrompt": "Activează n8n în Setări → Integrări pentru a instala instrumente."
+    },
+    "browse": {
+      "loading": "Se încarcă instrumentele...",
+      "emptyState": "Niciun instrument găsit",
+      "clearSearch": "Șterge căutarea"
+    },
+    "card": {
+      "voiceTriggerLabel": "Încearcă să spui",
+      "installedBadge": "Instalat",
+      "installButton": "Instalează instrument",
+      "customBadge": "Personalizat",
+      "activeLabel": "Activ",
+      "inactiveLabel": "Inactiv",
+      "shareButton": "Distribuie în registru",
+      "shareButtonShort": "Distribuie",
+      "updateButton": "Actualizează"
+    },
+    "detail": {
+      "loading": "Se încarcă detaliile...",
+      "toolSuiteTitle": "Suită de instrumente",
+      "toolSuiteDescription": "Acesta este un instrument multi-acțiune care poate efectua mai multe sarcini conexe.",
+      "voiceTriggersTitle": "Încearcă să spui",
+      "voiceTriggerFormat": "Hei Cal, {trigger}",
+      "requiredServicesTitle": "Servicii necesare",
+      "requiredVariablesTitle": "Configurare necesară",
+      "exampleLabel": "Exemplu:",
+      "requiredCredentialsTitle": "Credențiale n8n necesare",
+      "tagsTitle": "Etichete",
+      "authorTitle": "Autor",
+      "workflowTitle": "Workflow",
+      "openWorkflowButton": "Deschide în n8n",
+      "n8nDisabledMessage": "Activează n8n în Setări pentru a instala instrumente",
+      "updateButton": "Actualizează la v{version}",
+      "installButton": "Instalează instrument"
+    },
+    "install": {
+      "loading": "Se încarcă detaliile instrumentului...",
+      "variablesIntro": "Introdu valorile de configurare pentru acest instrument:",
+      "credentialsIntro": "Acest instrument necesită credențiale n8n. Introdu numele exact al fiecărei credențiale așa cum apare în instanța ta n8n.",
+      "credentialTypeLabel": "Tip:",
+      "credentialPlaceholder": "Introdu numele credențialei n8n",
+      "submitButton": "Instalează",
+      "installing": "Se instalează instrumentul în n8n...",
+      "successTitle": "Instrument instalat!",
+      "successMessage": "{tool} este acum disponibil.",
+      "successVoiceTriggersLabel": "Încearcă să spui:",
+      "errorTitle": "Instalarea a eșuat",
+      "modalTitle": "Instalează {tool}"
+    },
+    "installed": {
+      "n8nDisabled": "n8n nu este activat. Configurează n8n în Setări pentru a vedea instrumentele instalate.",
+      "loading": "Se încarcă instrumentele instalate...",
+      "emptyState": "Niciun workflow instalat în n8n",
+      "noSearchResults": "Niciun instrument nu corespunde cu \"{query}\""
+    },
+    "reload": {
+      "tooltip": "Reîncarcă instrumentele"
+    },
+    "share": {
+      "title": "Distribuie workflow-ul în registru",
+      "securityTitle": "Secretele tale nu părăsesc niciodată rețeaua ta",
+      "securityDescription": "Curățarea are loc local în browserul tău înainte de trimitere. ID-urile credențialelor sunt anulate.",
+      "variablesDetected": "Variabile detectate (vor fi parametrizate):",
+      "credentialsDetected": "Credențiale găsite și parametrizate:",
+      "privateUrlsDetected": "URL-uri rețea privată (vor fi parametrizate):",
+      "submissionFailed": "Trimiterea a eșuat",
+      "readyToSubmit": "Gata de trimitere!",
+      "popupBlockedHint": "Completează trimiterea în formular. Dacă popup-ul a fost blocat, apasă mai jos:",
+      "openFormButton": "Deschide formularul de trimitere",
+      "preparingSubmission": "Se pregătește trimiterea...",
+      "continueButton": "Continuă către formularul de trimitere"
+    },
+    "workflow": {
+      "customToolLabel": "Instrument personalizat",
+      "statusLabel": "Stare",
+      "statusActive": "Activ",
+      "statusInactive": "Inactiv",
+      "tagsLabel": "Etichete",
+      "createdLabel": "Creat",
+      "lastUpdatedLabel": "Ultima actualizare",
+      "n8nWorkflowLabel": "Workflow n8n",
+      "unpublishedInfo": "Acesta este un instrument personalizat nepublicat în registrul de instrumente CAAL. Distribuie-l pentru a ajuta pe alții să descopere și să folosească acest instrument. Toate cheile, ID-urile și URL-urile private vor fi eliminate automat.",
+      "shareButton": "Distribuie în registru"
+    },
+    "status": {
+      "initialTooltip": "Stare instrument",
+      "toolUsedTooltip": "Instrument: {names}",
+      "noToolTooltip": "Niciun instrument folosit",
+      "waitingAriaLabel": "Stare instrument: se așteaptă răspunsul",
+      "toolDetailsAriaLabel": "Instrument folosit: {names}. Click pentru detalii.",
+      "noToolAriaLabel": "Niciun instrument apelat - răspuns generat de model",
+      "parametersTitle": "Parametri instrument"
+    }
+  },
+  "Memory": {
+    "panel": {
+      "title": "Memorie",
+      "subtitle": "{count} intrări stocate",
+      "emptyState": "Nicio memorie stocată",
+      "emptyHint": "Memoriile sunt create când instrumentele returnează date sau când mă rogi să îmi amintesc ceva",
+      "clearAll": "Șterge tot",
+      "addEntry": "Adaugă intrare"
+    },
+    "confirmClearAll": "Ștergi toate intrările de memorie?",
+    "create": {
+      "title": "Adaugă intrare de memorie",
+      "key": "Cheie",
+      "keyPlaceholder": "ex. preferință_utilizator",
+      "valuePlaceholder": "ex. îi place jazz-ul",
+      "save": "Adaugă intrare"
+    },
+    "detail": {
+      "value": "Valoare",
+      "storedAt": "Stocat",
+      "expiresAt": "Expiră",
+      "noExpiry": "Fără expirare",
+      "source": "Sursă",
+      "sources": {
+        "tool_hint": "Stocat automat de instrument",
+        "explicit": "Stocat la cerere",
+        "api": "Stocat prin API",
+        "ui": "Adăugat din UI"
+      }
+    }
+  },
+  "Setup": {
+    "welcome": "Bine ai venit la CAAL",
+    "stepOf": "Pasul {current} din {total}",
+    "step1Title": "Cum te voi auzi?",
+    "step2Title": "Alege furnizorul tău AI",
+    "step3Title": "Alege-ți vocea",
+    "step4Title": "Configurează integrările",
+    "finishSetup": "Finalizează configurarea"
+  },
+  "ControlBar": {
+    "ariaLabel": "Controale asistent vocal",
+    "toggleMicrophone": "Comută microfonul",
+    "toggleCamera": "Comută camera",
+    "screenShare": "Partajare ecran",
+    "toggleScreenShare": "Comută partajarea ecranului",
+    "transcript": "Transcriere",
+    "toggleTranscript": "Afișează/ascunde transcrierea",
+    "endSession": "Încheie sesiunea",
+    "endCall": "ÎNCHEIE APELUL",
+    "endCallShort": "ÎNCHEIE",
+    "wakeWordDisabled": "Detectarea cuvântului de activare dezactivată",
+    "wakeWordWaiting": "Se așteaptă cuvântul de activare — spune \"{wakeWord}\"",
+    "wakeWordListening": "Ascult — vorbește acum",
+    "selectMicrophone": "Selectează microfonul",
+    "selectCamera": "Selectează camera",
+    "typePlaceholder": "Scrie ceva...",
+    "sending": "Se trimite...",
+    "send": "Trimite"
+  }
+}

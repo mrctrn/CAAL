@@ -68,7 +68,7 @@ DEFAULT_SETTINGS = {
     "agent_name": "Cal",
     "prompt": "default",  # "default" | "custom"
     # Language setting
-    "language": "en",  # ISO 639-1: "en" | "fr" | "it" | "pt"
+    "language": "en",  # ISO 639-1: "en" | "fr" | "it" | "pt" | "da" | "ro"
     # Provider settings (UI sets both together, but stored separately for power users)
     "stt_provider": "speaches",  # "speaches" | "groq"
     "llm_provider": "ollama",  # "ollama" | "groq"
@@ -120,6 +120,8 @@ PIPER_VOICE_MAP: dict[str, str] = {
     "fr": "speaches-ai/piper-fr_FR-siwis-medium",
     "it": "speaches-ai/piper-it_IT-paola-medium",
     "pt": "speaches-ai/piper-pt_BR-faber-medium",
+    "da": "speaches-ai/piper-da_DK-talesyntese-medium",
+    "ro": "speaches-ai/piper-ro_RO-mihai-medium",
 }
 
 # Keys that should never be returned via API (security)
@@ -468,6 +470,18 @@ def load_prompt_with_context(
         date_context = (
             f"Hoje é {format_date_speech_friendly(now, language='pt')}. "
             f"São {format_time_speech_friendly(now, language='pt')}, "
+            f"{timezone_display}."
+        )
+    elif language == "da":
+        date_context = (
+            f"I dag er det {format_date_speech_friendly(now, language='da')}. "
+            f"Klokken er {format_time_speech_friendly(now, language='da')}, "
+            f"{timezone_display}."
+        )
+    elif language == "ro":
+        date_context = (
+            f"Astăzi este {format_date_speech_friendly(now, language='ro')}. "
+            f"Ora este {format_time_speech_friendly(now, language='ro')}, "
             f"{timezone_display}."
         )
     else:

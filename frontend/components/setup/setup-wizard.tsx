@@ -72,6 +72,8 @@ const PIPER_MODELS: Record<string, string> = {
   fr: 'speaches-ai/piper-fr_FR-siwis-medium',
   it: 'speaches-ai/piper-it_IT-paola-medium',
   pt: 'speaches-ai/piper-pt_BR-faber-medium',
+  da: 'speaches-ai/piper-da_DK-talesyntese-medium',
+  ro: 'speaches-ai/piper-ro_RO-mihai-medium',
 };
 
 export function SetupWizard({ onComplete }: SetupWizardProps) {

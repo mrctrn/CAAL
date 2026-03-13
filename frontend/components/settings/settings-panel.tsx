@@ -137,6 +137,8 @@ const LANGUAGES = [
   { code: 'fr', label: 'Français' },
   { code: 'it', label: 'Italiano' },
   { code: 'pt', label: 'Português' },
+  { code: 'da', label: 'Dansk' },
+  { code: 'ro', label: 'Română' },
 ] as const;
 
 // =============================================================================

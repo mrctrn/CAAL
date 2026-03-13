@@ -9,12 +9,16 @@ const LANGUAGES = [
   { code: 'fr', label: 'Français' },
   { code: 'it', label: 'Italiano' },
   { code: 'pt', label: 'Português' },
+  { code: 'da', label: 'Dansk' },
+  { code: 'ro', label: 'Română' },
 ] as const;
 
 const PIPER_MODELS: Record<string, string> = {
   fr: 'speaches-ai/piper-fr_FR-siwis-medium',
   it: 'speaches-ai/piper-it_IT-paola-medium',
   pt: 'speaches-ai/piper-pt_BR-faber-medium',
+  da: 'speaches-ai/piper-da_DK-talesyntese-medium',
+  ro: 'speaches-ai/piper-ro_RO-mihai-medium',
 };
 
 interface LanguageSelectorProps {
@@ -64,7 +68,9 @@ export function LanguageSelector({ onSelect }: LanguageSelectorProps) {
         <div className="text-center">
           <h2 className="text-lg font-semibold">Choose your language</h2>
           <p className="text-muted-foreground text-sm">
-            Choisissez votre langue / Scegli la tua lingua / Escolha o idioma
+            Choisissez votre langue / Scegli la tua lingua
+            <br />
+            Escolha o idioma / Vælg dit sprog / Alegeți limba
           </p>
         </div>
 
