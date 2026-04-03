@@ -18,7 +18,7 @@ CAAL is an open-source voice assistant built on [LiveKit Agents](https://docs.li
 
 **Purpose-built model.** CAAL ships with [`caal-ministral`](https://ollama.com/coreworxlab/caal-ministral) — a fine-tuned 8B model trained specifically for voice tool calling. It knows how to control your smart home, chain tools together, and respond naturally. The LLM is one piece of the architecture, not the architecture. It handles decisions that code can't — which tool to call, what parameters to use, when to chain steps. Everything else is code. That's why an 8B model works.
 ```bash
-ollama pull coreworxlab/caal-ministral:latest
+ollama pull coreworxlab/caal-qwen3.5-9b
 ```
 
 **Infinitely extensible.** Any [n8n](https://n8n.io/) workflow becomes a voice-activated tool. Control [Home Assistant](https://www.home-assistant.io/) devices, query APIs, automate your life — then share your tools with the community via the [CAAL Tool Registry](https://github.com/CoreWorxLab/caal-tools). Tools follow a suite convention — fewer tools, better accuracy, more reliable routing.
